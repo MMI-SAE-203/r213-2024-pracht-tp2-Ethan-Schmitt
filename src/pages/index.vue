@@ -1,11 +1,23 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-interface MaisonRecord {
-  adresse: string;
-  collectionId: string;
-  // ...
+
+interface MaisonsRecord {
+    Adresse: string;
+    Favori: boolean;
+    Images: string;
+    NBChambres: number;
+    NbSdb: number;
+    Nom_Maison: string;
+    Prix: number;
+    Surface: string;
+    collectionId: string;
+    collectionName: string;
+    created: string;
+    id: string;
+    updated: string;
 }
-const maisonsListe: MaisonRecord[] = [
+
+const maisonsListe:MaisonsRecord[] = [
   {
     Adresse: "L'Isle sur le Doubs",
     Favori: true,
@@ -87,6 +99,7 @@ const maisonsListe: MaisonRecord[] = [
     updated: '2024-04-11 15:03:08.140Z'
   }
 ]
+
 console.log(maisonsListe);
 
 </script>

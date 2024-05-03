@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-
+import type { MaisonsRecord } from '@/types'
 interface MaisonsRecord {
     Adresse: string;
     Favori: boolean;

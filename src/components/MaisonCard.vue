@@ -1,5 +1,7 @@
 <script setup lang="ts">
   import type { MaisonsRecord } from '@/types'
+  import type { MaisonResponse } from '@/pocketbase-types'
+  import ImgPb from './ImgPb.vue'
   const props = defineProps<MaisonsRecord>()
 </script>
 <template>
@@ -197,4 +199,8 @@
     </div>
   </div>
 </div>
+<div>
+    <!-- ... Changez <img> en : -->
+    <ImgPb :record="props" :filename="image" :width="387" :height="235" class="..." />
+  </div>
 </template>

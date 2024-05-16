@@ -5,11 +5,11 @@
   const props = defineProps<MaisonsRecord>()
 </script>
 <template>
-  <div class="personne-card border-2 p-1">
+ <!--  <div class="personne-card border-2 p-1">
     <p>nom : {{ Nom_Maison }}</p>
     <p>prix : {{ Prix }}</p>
     <p>Favori : {{ Favori ? 'oui' : 'non' }}</p>
-  </div>
+  </div> -->
   <div
   class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative rounded-lg bg-white border-[1.5px] border-indigo-100"
 >
@@ -200,7 +200,6 @@
   </div>
 </div>
 <div>
-    <!-- ... Changez <img> en : -->
-    <ImgPb :record="props" :filename="image" :width="387" :height="235" class="..." />
+    
   </div>
 </template>

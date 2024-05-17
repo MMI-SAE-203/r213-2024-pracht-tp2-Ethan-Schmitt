@@ -13,7 +13,7 @@
       class="w-[352px] h-[200px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-lg rounded-tr-lg bg-gray-500"
     ></div>
     <ImgPb
-      :src="image"
+      :src="Images"
       alt="Maison"
       class="w-[352px] h-[200px] absolute left-0 top-0 rounded-tl-lg rounded-tr-lg"
     />

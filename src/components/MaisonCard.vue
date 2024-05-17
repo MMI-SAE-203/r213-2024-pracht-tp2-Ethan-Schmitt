@@ -5,21 +5,17 @@
   const props = defineProps<MaisonsRecord>()
 </script>
 <template>
- <!--  <div class="personne-card border-2 p-1">
-    <p>nom : {{ Nom_Maison }}</p>
-    <p>prix : {{ Prix }}</p>
-    <p>Favori : {{ Favori ? 'oui' : 'non' }}</p>
-  </div> -->
   <div
-  class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative rounded-lg bg-white border-[1.5px] border-indigo-100"
+  class="flex flex-col justify-start items-start w-[352px] relative rounded-lg bg-white border-[1.5px] border-indigo-100"
 >
   <div class="self-stretch flex-grow-0 flex-shrink-0 h-[200px]">
     <div
-      class="w-[342px] h-[200px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-lg rounded-tr-lg bg-gray-500"
+      class="w-[352px] h-[200px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-lg rounded-tr-lg bg-gray-500"
     ></div>
-    <img
-      src=""
-      class="w-[342px] h-[235px] absolute left-[-0.5px] top-[-24.5px] object-cover"
+    <ImgPb
+      :src="image"
+      alt="Maison"
+      class="w-[352px] h-[200px] absolute left-0 top-0 rounded-tl-lg rounded-tr-lg"
     />
   </div>
   <div
@@ -29,16 +25,16 @@
       <div class="flex-grow-0 flex-shrink-0 w-[249px] h-[75px]">
         <div class="flex justify-start items-end w-[164.11px] absolute left-0 top-0 gap-0.5">
           <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-indigo-500">
-            ${{ Prix }}
+            {{ Prix }}
           </p>
           <p class="flex-grow-0 flex-shrink-0 w-[58px] h-8 text-base text-left text-gray-500">
-            /month
+            €
           </p>
         </div>
         <p
           class="w-[249px] absolute left-0 top-[43px] text-2xl font-semibold text-left text-gray-900"
         >
-          {{ Adresse }}
+          {{Nom_Maison}}
         </p>
       </div>
       <svg
@@ -60,19 +56,19 @@
         ></path>
       </svg>
     </div>
-    <p class="self-stretch flex-grow-0 flex-shrink-0 w-[302px] text-base text-left text-gray-500">
-      {{Surface}}
+    <p class="self-stretch flex-grow-0 flex-shrink-0 w-[312px] text-base text-left text-gray-500">
+      {{ Adresse }}
     </p>
     <svg
-      width="302"
+      width="312"
       height="2"
-      viewBox="0 0 302 2"
+      viewBox="0 0 312 2"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       class="self-stretch flex-grow-0 flex-shrink-0"
       preserveAspectRatio="xMidYMid meet"
     >
-      <line y1="1.25" x2="302" y2="1.25" stroke="#E0E7FF" stroke-width="1.5"></line>
+      <line y1="1.25" x2="312" y2="1.25" stroke="#E0E7FF" stroke-width="1.5"></line>
     </svg>
     <div class="flex justify-center items-center self-stretch flex-grow-0 flex-shrink-0 gap-1.5">
       <div class="flex justify-start items-center flex-grow relative gap-2">
@@ -107,7 +103,7 @@
             stroke-linejoin="round"
           ></path>
         </svg>
-        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">4 Beds</p>
+        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{NBChambres}} Beds</p>
       </div>
       <div class="flex justify-center items-center flex-grow relative gap-2">
         <svg
@@ -119,7 +115,7 @@
           class="flex-grow-0 flex-shrink-0 w-5 h-5 relative"
           preserveAspectRatio="xMidYMid meet"
         >
-          <g clip-path="url(#clip0_7_475)">
+          <g clip-path="url(#clip0_29323_902)">
             <path
               d="M3.83333 10H17.1667C17.3877 10 17.5996 10.0878 17.7559 10.2441C17.9122 10.4004 18 10.6123 18 10.8333V13.3333C18 14.2174 17.6488 15.0652 17.0237 15.6904C16.3986 16.3155 15.5507 16.6667 14.6667 16.6667H6.33333C5.44928 16.6667 4.60143 16.3155 3.97631 15.6904C3.35119 15.0652 3 14.2174 3 13.3333V10.8333C3 10.6123 3.0878 10.4004 3.24408 10.2441C3.40036 10.0878 3.61232 10 3.83333 10V10Z"
               stroke="#6366F1"
@@ -135,14 +131,14 @@
               stroke-linejoin="round"
             ></path>
             <path
-              d="M3.83325 17.5L4.66659 16.25"
+              d="M3.83337 17.5L4.66671 16.25"
               stroke="#6366F1"
               stroke-width="1.66667"
               stroke-linecap="round"
               stroke-linejoin="round"
             ></path>
             <path
-              d="M17.1666 17.5L16.3333 16.25"
+              d="M17.1667 17.5L16.3334 16.25"
               stroke="#6366F1"
               stroke-width="1.66667"
               stroke-linecap="round"
@@ -150,12 +146,12 @@
             ></path>
           </g>
           <defs>
-            <clipPath id="clip0_7_475">
+            <clipPath id="clip0_29323_902">
               <rect width="20" height="20" fill="white" transform="translate(0.5)"></rect>
             </clipPath>
           </defs>
         </svg>
-        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">2 Bathrooms</p>
+        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{NbSdb}} Bathrooms</p>
       </div>
       <div class="flex justify-end items-center flex-grow relative gap-2">
         <svg
@@ -167,23 +163,23 @@
           class="flex-grow-0 flex-shrink-0 w-5 h-5 relative"
           preserveAspectRatio="none"
         >
-          <g clip-path="url(#clip0_7_483)">
+          <g clip-path="url(#clip0_29323_913)">
             <path
-              d="M8.83148 15.5436L3.45631 10.1684C2.8479 9.56002 2.8479 8.4398 3.45631 7.83139L8.83148 2.45621C9.43989 1.84781 10.5601 1.84781 11.1685 2.45621L16.5437 7.83139C17.1521 8.4398 17.1521 9.56002 16.5437 10.1684L11.1685 15.5436C10.5601 16.152 9.43989 16.152 8.83148 15.5436V15.5436Z"
+              d="M8.83161 15.5436L3.45643 10.1684C2.84802 9.56002 2.84802 8.4398 3.45643 7.83139L8.83161 2.45621C9.44001 1.84781 10.5602 1.84781 11.1686 2.45621L16.5438 7.83139C17.1522 8.4398 17.1522 9.56002 16.5438 10.1684L11.1686 15.5436C10.5602 16.152 9.44001 16.152 8.83161 15.5436V15.5436Z"
               stroke="#6366F1"
               stroke-width="1.66667"
               stroke-linecap="round"
               stroke-linejoin="round"
             ></path>
             <path
-              d="M2 13.1716L6.36371 17.5353"
+              d="M1.99988 13.1716L6.36359 17.5353"
               stroke="#6366F1"
               stroke-width="1.66667"
               stroke-linecap="round"
               stroke-linejoin="round"
             ></path>
             <path
-              d="M13.636 17.5353L17.9997 13.1716"
+              d="M13.6361 17.5353L17.9998 13.1716"
               stroke="#6366F1"
               stroke-width="1.66667"
               stroke-linecap="round"
@@ -191,15 +187,15 @@
             ></path>
           </g>
           <defs>
-            <clipPath id="clip0_7_483"><rect width="20" height="20" fill="white"></rect></clipPath>
+            <clipPath id="clip0_29323_913">
+              <rect width="20" height="20" fill="white"></rect>
+            </clipPath>
           </defs>
         </svg>
-        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">6x7.5 m²</p>
+        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{Surface}} m²</p>
       </div>
     </div>
   </div>
 </div>
-<div>
-    
-  </div>
+
 </template>

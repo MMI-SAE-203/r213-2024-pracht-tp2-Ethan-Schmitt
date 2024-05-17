@@ -92,7 +92,9 @@ console.log(maisonsListe);
 
 <template>
   <h1 class="text-2xl"> A vendre</h1>
-  <div class="grid grid-cols-3 gap-4 iteme-center "> 
+  <div class="flex justify-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
     <MaisonCard v-for="(maison, index) in maisonsListe" :key="index" v-bind="maison" />
+  </div>
   </div>
 </template>
